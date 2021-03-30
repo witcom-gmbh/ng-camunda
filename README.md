@@ -1,4 +1,4 @@
-# NG Camunda
+# NG Camunda Core
 NG Camunda is an Angular library which can be used to build custom tasklists. It uses FormIO to render user-forms. 
 If you run a keycloak-protected Camunda REST-Engine* it easily integrates with keycloak-angular. 
 
