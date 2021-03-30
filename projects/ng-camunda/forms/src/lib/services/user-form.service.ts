@@ -6,7 +6,7 @@ import {
 } from 'rxjs/operators';
 
 import t from 'typy';
-import { CamundaProcessDefinitionDto, CamundaStartProcessInstanceDto, CamundaVariableValueDto, CamundaProcessInstanceWithVariablesDto, CamundaTaskDto, CamundaUserIdDto, CamundaTaskEscalationDto, CamundaPatchVariablesDto } from '../models';
+import { CamundaProcessDefinitionDto, CamundaStartProcessInstanceDto, CamundaVariableValueDto, CamundaProcessInstanceWithVariablesDto, CamundaTaskDto, CamundaUserIdDto, CamundaTaskEscalationDto, CamundaPatchVariablesDto } from '@ng-camunda/core';
 import { ProcessStartFormDefinition } from '../models/process-start-form-definition';
 import { CamundaFormsConfiguration } from '../camunda-forms-configuration';
 import { HttpClient } from '@angular/common/http';
