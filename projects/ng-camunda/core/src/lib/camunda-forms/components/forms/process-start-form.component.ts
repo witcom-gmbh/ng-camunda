@@ -36,7 +36,7 @@ export class ProcessStartFormComponent implements OnInit {
         //console.log(form.formioDefinition);
         this.processStartFormDef=form;
         this.formDefinition=form.formioDefinition;
-        console.log("here");
+        //console.log("here");
         this.isLoading=false;
       });
       this.refreshForm = new EventEmitter();
