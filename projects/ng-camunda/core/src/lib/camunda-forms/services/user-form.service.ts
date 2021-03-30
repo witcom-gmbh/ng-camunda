@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
-import { CamundaProcessDefinitionService, CamundaTaskService, CamundaTaskVariableService, CamundaProcessInstanceService } from '@ng-camunda/core';
+import { CamundaProcessDefinitionService, CamundaTaskService, CamundaTaskVariableService, CamundaProcessInstanceService } from '@ng-camunda/core/src/lib/camunda-engine';
 import {throwError, Observable, of, forkJoin, zip, merge, concat} from 'rxjs';
 import {
   map, catchError, switchMap, mergeMap, flatMap, tap
 } from 'rxjs/operators';
 
 import t from 'typy';
-import { CamundaProcessDefinitionDto, CamundaStartProcessInstanceDto, CamundaVariableValueDto, CamundaProcessInstanceWithVariablesDto, CamundaTaskDto, CamundaUserIdDto, CamundaTaskEscalationDto, CamundaPatchVariablesDto } from '@ng-camunda/core';
+import { CamundaProcessDefinitionDto, CamundaStartProcessInstanceDto, CamundaVariableValueDto, CamundaProcessInstanceWithVariablesDto,
+   CamundaTaskDto, CamundaUserIdDto, CamundaTaskEscalationDto, CamundaPatchVariablesDto } from '@ng-camunda/core/src/lib/camunda-engine';
 import { ProcessStartFormDefinition } from '../models/process-start-form-definition';
 import { CamundaFormsConfiguration } from '../camunda-forms-configuration';
 import { HttpClient } from '@angular/common/http';
@@ -38,7 +39,7 @@ export class UserFormService {
     user.userId=claimUser;
     let params={id:taskId,body:user};
 
-    return this.camundaTaskService.claim(params).pipe( 
+    return this.camundaTaskService.claim(params).pipe(
       switchMap(res=>this.camundaTaskService.getTask({id:taskId}))
     )
 

@@ -10,14 +10,6 @@
       "@ng-camunda/core/*": [
         "projects/ng-camunda/core/*",
         "projects/ng-camunda/core"
-      ],
-      "@ng-camunda/forms": [
-        "dist/ng-camunda/forms/ng-camunda-forms",
-        "dist/ng-camunda/forms"
-      ],
-      "@ng-camunda/tasks": [
-        "dist/ng-camunda/tasks/ng-camunda-tasks",
-        "dist/ng-camunda/tasks"
       ]
     },
     "baseUrl": "./",
