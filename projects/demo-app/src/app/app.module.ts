@@ -13,7 +13,7 @@ import { LoggerModule, LoggerConfig, NGXLogger, NgxLoggerLevel } from 'ngx-logge
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import {CamundaEngineConfiguration,CamundaFormsConfiguration,CamundaEngine} from '@ng-camunda/core';
+import {CamundaEngineConfiguration,CamundaFormsConfiguration,CamundaEngine,CamundaFormsModule} from '@ng-camunda/core';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
 import{ApplicationConfigurationService} from '@demo-app/core/services';
@@ -68,6 +68,7 @@ export const CONFIG_DEPENDENCIES: Provider = {
     BrowserAnimationsModule,
     KeycloakAngularModule,
     CamundaEngine,
+    CamundaFormsModule,
     CoreModule,
     SharedModule,
     ProcessMgmtModule,

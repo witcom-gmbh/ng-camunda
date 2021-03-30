@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {CamundaEngine} from '@ng-camunda/core';
+import {CamundaEngine,CamundaFormsModule} from '@ng-camunda/core';
 import { ProcessCatalogComponent } from './components/process-catalog.component';
 import { ProcessCardComponent } from './components/process-card.component';
 import { ProcessStartComponent } from './components/process-start.component';
@@ -19,7 +19,8 @@ import { SharedModule } from '@demo-app/shared/shared.module';
     NgbModule,
     //AvatarModule,
     SharedModule,
-    CamundaEngine
+    CamundaEngine,
+    CamundaFormsModule
   ],
   exports:[ProcessCatalogComponent,ProcessCardComponent, ProcessStartComponent, SimpleTaskListComponent]
 })
