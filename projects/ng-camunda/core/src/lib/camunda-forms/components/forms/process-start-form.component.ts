@@ -33,10 +33,10 @@ export class ProcessStartFormComponent implements OnInit {
   ngOnInit(): void {
     if (this.processDefId){
       this.userTaskFormService.getStartFormDefinition(this.processDefId).subscribe(form => {
-        console.log(form.formioDefinition);
+        //console.log(form.formioDefinition);
         this.processStartFormDef=form;
         this.formDefinition=form.formioDefinition;
-
+        console.log("here");
         this.isLoading=false;
       });
       this.refreshForm = new EventEmitter();
