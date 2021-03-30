@@ -46,82 +46,130 @@
         }
       }
     },
-    "@ng-camunda/tasks": {
-      "projectType": "library",
-      "root": "projects/ng-camunda/tasks",
-      "sourceRoot": "projects/ng-camunda/tasks/src",
-      "prefix": "lib",
+    "demo-app": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/demo-app",
+      "sourceRoot": "projects/demo-app/src",
+      "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "tsConfig": "projects/ng-camunda/tasks/tsconfig.lib.json",
-            "project": "projects/ng-camunda/tasks/ng-package.json"
+            "outputPath": "dist/demo-app",
+            "index": "projects/demo-app/src/index.html",
+            "main": "projects/demo-app/src/main.ts",
+            "polyfills": "projects/demo-app/src/polyfills.ts",
+            "tsConfig": "projects/demo-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/demo-app/src/favicon.ico",
+              "projects/demo-app/src/assets"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "projects/demo-app/src/styles.css"
+            ],
+            "scripts": []
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-camunda/tasks/tsconfig.lib.prod.json"
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo-app/src/environments/environment.ts",
+                  "with": "projects/demo-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            },
+            "dev":{
+              "fileReplacements": [
+                {
+                  "replace": "projects/demo-app/src/environments/environment.ts",
+                  "with": "projects/demo-app/src/environments/environment.dev.ts"
+                }
+              ]
             }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "demo-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "demo-app:build:production"
+            },
+            "dev": {
+              "browserTarget": "demo-app:build:dev"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/ng-camunda/tasks/src/test.ts",
-            "tsConfig": "projects/ng-camunda/tasks/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-camunda/tasks/karma.conf.js"
+            "main": "projects/demo-app/src/test.ts",
+            "polyfills": "projects/demo-app/src/polyfills.ts",
+            "tsConfig": "projects/demo-app/tsconfig.spec.json",
+            "karmaConfig": "projects/demo-app/karma.conf.js",
+            "assets": [
+              "projects/demo-app/src/favicon.ico",
+              "projects/demo-app/src/assets"
+            ],
+            "styles": [
+              "projects/demo-app/src/styles.css"
+            ],
+            "scripts": []
           }
         },
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "projects/ng-camunda/tasks/tsconfig.lib.json",
-              "projects/ng-camunda/tasks/tsconfig.spec.json"
+              "projects/demo-app/tsconfig.app.json",
+              "projects/demo-app/tsconfig.spec.json",
+              "projects/demo-app/e2e/tsconfig.json"
             ],
             "exclude": [
               "**/node_modules/**"
             ]
           }
-        }
-      }
-    },
-    "@ng-camunda/forms": {
-      "projectType": "library",
-      "root": "projects/ng-camunda/forms",
-      "sourceRoot": "projects/ng-camunda/forms/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
           "options": {
-            "tsConfig": "projects/ng-camunda/forms/tsconfig.lib.json",
-            "project": "projects/ng-camunda/forms/ng-package.json"
+            "protractorConfig": "projects/demo-app/e2e/protractor.conf.js",
+            "devServerTarget": "demo-app:serve"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/ng-camunda/forms/tsconfig.lib.prod.json"
+              "devServerTarget": "demo-app:serve:production"
             }
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/ng-camunda/forms/src/test.ts",
-            "tsConfig": "projects/ng-camunda/forms/tsconfig.spec.json",
-            "karmaConfig": "projects/ng-camunda/forms/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/ng-camunda/forms/tsconfig.lib.json",
-              "projects/ng-camunda/forms/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
           }
         }
       }

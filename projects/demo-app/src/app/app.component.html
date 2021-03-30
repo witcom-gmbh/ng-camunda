@@ -1,0 +1,19 @@
+<nav class="navbar navbar-dark bg-dark mb-5">
+  <a class="navbar-brand" href="/">Prozess-Management Demo</a>
+  <div class="navbar-expand mr-auto">
+    <div class="navbar-nav">
+      <a routerLink="/prozesse" routerLinkActive="active" class="nav-item nav-link" >Prozesse</a>
+      <a routerLink="/tasks" routerLinkActive="active" class="nav-item nav-link" >Aufgaben</a>
+    </div>
+  </div>
+  <div class="navbar-expand ml-auto navbar-nav">
+    <span class="navbar-text navbar-right">Angemeldet als <simple-user-info></simple-user-info></span>
+  </div>
+</nav>
+
+
+
+
+
+<ff-alerts></ff-alerts>
+<router-outlet></router-outlet>

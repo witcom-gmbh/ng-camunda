@@ -7,14 +7,13 @@
         "dist/ng-camunda/core/ng-camunda-core",
         "dist/ng-camunda/core"
       ],
-      "@ng-camunda/forms": [
-        "dist/ng-camunda/forms/ng-camunda-forms",
-        "dist/ng-camunda/forms"
+      "@ng-camunda/core/*": [
+        "projects/ng-camunda/core/*",
+        "projects/ng-camunda/core"
       ],
-      "@ng-camunda/tasks": [
-        "dist/ng-camunda/tasks/ng-camunda-tasks",
-        "dist/ng-camunda/tasks"
-      ]
+      "@demo-app/core/*":["projects/demo-app/src/app/core/*"],
+      "@demo-app/*":["projects/demo-app/src/app/*"],
+      "@demo-app/env/*":["projects/demo-app/src/environments/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

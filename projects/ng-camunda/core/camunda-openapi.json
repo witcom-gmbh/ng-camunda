@@ -1,6 +1,6 @@
 {
   "input": "./openapi/camunda-7.14.json",
-  "output": "./src/lib/camunda-engine/",
+  "output": "./src/lib/camunda-engine/api",
   "module":"CamundaEngine",
   "servicePrefix":"Camunda",
   "modelPrefix":"Camunda",
