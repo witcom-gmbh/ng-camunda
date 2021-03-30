@@ -10,7 +10,10 @@
       "@ng-camunda/core/*": [
         "projects/ng-camunda/core/*",
         "projects/ng-camunda/core"
-      ]
+      ],
+      "@demo-app/core/*":["projects/demo-app/src/app/core/*"],
+      "@demo-app/*":["projects/demo-app/src/app/*"],
+      "@demo-app/env/*":["projects/demo-app/src/environments/*"]
     },
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",

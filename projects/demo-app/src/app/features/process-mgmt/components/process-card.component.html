@@ -1,0 +1,8 @@
+<div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">{{ processDefinition.name }}</h5>
+      <p *ngIf="processDefinition.description" class="card-text">{{ processDefinition.description }}</p>
+      <p *ngIf="!processDefinition.description" class="card-text">Keine Beschreibung vorhanden</p>
+      <button class="btn btn-primary" (click)="testForm()">Prozess starten</button>
+    </div>
+</div>

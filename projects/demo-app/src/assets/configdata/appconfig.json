@@ -1,0 +1,7 @@
+{
+"APP_KEYCLOAK_URL":"https://auth.dev.witcom.services/auth",
+"APP_KEYCLOAK_REALM":"witcom",
+"APP_KEYCLOAK_CLIENT_ID":"demo-process-management-webapp",
+"APP_CAMUNDA_ROOT_URL":"https://apis.dev.witcom.services/camunda",
+"APP_FORMIO_ROOT_URL":"https://formio-demo.dev.witcom.services"
+}

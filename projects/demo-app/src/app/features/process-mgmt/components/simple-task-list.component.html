@@ -1,0 +1,80 @@
+    <div class="container">
+
+        <h1 class="h3 mb-3">Tasks</h1>
+
+        <div class="row">
+            <div class="col-4">
+                <div class="card card-border-primary">
+                    <div class="card-header">
+                        <div class="card-actions float-right">
+
+                        </div>
+                        <h5 class="card-title">Taskliste</h5>
+                        <h6 class="card-subtitle text-muted">Alle Tasks...</h6>
+                    </div>
+                    <div *ngFor="let task of allTasks;trackBy: trackTask" class="card-body p-3">
+
+                        <div class="card mb-3 bg-light">
+<div class="card-header">
+
+<div class="card-actions float-right">
+
+                            <div ngbDropdown class="d-inline-block">
+                              <a  id="dropdownBasic1" ngbDropdownToggle><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal align-middle">
+                                                                <circle cx="12" cy="12" r="1"></circle>
+                                                                <circle cx="19" cy="12" r="1"></circle>
+                                                                <circle cx="5" cy="12" r="1"></circle>
+                                                            </svg></a>
+                              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button *ngIf="!task.assignee" ngbDropdownItem (click)="claimTask(task.id)">Übernehmen</button>
+
+                                <button ngbDropdownItem>Another Action</button>
+                                <button ngbDropdownItem>Something else is here</button>
+                              </div>
+                            </div>
+
+
+                            </div>
+                                {{task.name}}
+                            </div>
+                            <div class="card-body p-3">
+
+                                <p><small>{{task.description}}</small></p>
+                                <div class="float-right mt-n1">
+                                  <camunda-user-profile *ngIf="task.assignee" [userName]="task.assignee"></camunda-user-profile>
+                                </div>
+                                <div *ngIf="task.assignee">
+                                <a class="btn btn-outline-primary btn-sm"  (click)="viewTask(task)">Bearbeiten</a>
+
+                                </div>
+                                <div *ngIf="!task.assignee">
+                                <a class="btn btn-outline-primary btn-sm"  (click)="viewTask(task)">Ansehen</a>&nbsp;
+                                <a class="btn btn-outline-primary btn-sm"  (click)="claimTask(task.id)">Übernehmen</a>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="selectedTask" class="col-8">
+
+
+              <div class="row">
+              <task-form (escalateSuccess)="escalateSuccess($event)" (completeSuccess)="completeSuccess($event)" (saveSuccess)="taskStateSaved($event)" [readOnly]="!isMyTask()" [taskId]="selectedTask.id"></task-form>
+              </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+

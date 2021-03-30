@@ -3,6 +3,13 @@ import { CamundaFormsConfiguration, CamundaFormsConfigurationParams } from './ca
 import { HttpClient } from '@angular/common/http';
 import {FormioApiService} from './services/formio-api.service';
 
+import { FormioModule } from '@formio/angular';
+import { CommonModule } from '@angular/common';
+
+import { CustomComponentComponent } from './components/forms/custom-component.component';
+import { registerCustomComponent } from './components/forms/custom-component.formio';
+import { ProcessStartFormComponent } from './components/forms/process-start-form.component';
+import { TaskFormComponent } from './components/forms/task-form.component';
 
 @NgModule({
   declarations: [],
@@ -10,8 +17,9 @@ import {FormioApiService} from './services/formio-api.service';
     FormioApiService
   ],
   imports: [
+    FormioModule,CommonModule
   ],
-  exports: []
+  exports: [ProcessStartFormComponent,TaskFormComponent, CustomComponentComponent]
 })
 export class CamundaFormsModule {
   static forRoot(params: CamundaFormsConfigurationParams): ModuleWithProviders<CamundaFormsModule> {
