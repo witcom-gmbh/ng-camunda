@@ -1,6 +1,6 @@
 {
   "name": "@ng-camunda/core",
-  "version": "7.14.0",
+  "version": "0.0.1",
   "scripts": {
     "openapi-gen": "ng-openapi-gen -c camunda-openapi.json"
   },
