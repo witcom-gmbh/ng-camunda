@@ -1,0 +1,7 @@
+{
+  "input": "./openapi/camunda-7.14.json",
+  "output": "./src/lib/camunda-engine/",
+  "module":"CamundaEngine",
+  "configuration":"CamundaEngineConfiguration",
+  "ignoreUnusedModels": false
+}

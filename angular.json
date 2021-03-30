@@ -1,0 +1,131 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": false
+  },
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "@ng-camunda/core": {
+      "projectType": "library",
+      "root": "projects/ng-camunda/core",
+      "sourceRoot": "projects/ng-camunda/core/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-camunda/core/tsconfig.lib.json",
+            "project": "projects/ng-camunda/core/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-camunda/core/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-camunda/core/src/test.ts",
+            "tsConfig": "projects/ng-camunda/core/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-camunda/core/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-camunda/core/tsconfig.lib.json",
+              "projects/ng-camunda/core/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@ng-camunda/tasks": {
+      "projectType": "library",
+      "root": "projects/ng-camunda/tasks",
+      "sourceRoot": "projects/ng-camunda/tasks/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-camunda/tasks/tsconfig.lib.json",
+            "project": "projects/ng-camunda/tasks/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-camunda/tasks/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-camunda/tasks/src/test.ts",
+            "tsConfig": "projects/ng-camunda/tasks/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-camunda/tasks/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-camunda/tasks/tsconfig.lib.json",
+              "projects/ng-camunda/tasks/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "@ng-camunda/forms": {
+      "projectType": "library",
+      "root": "projects/ng-camunda/forms",
+      "sourceRoot": "projects/ng-camunda/forms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/ng-camunda/forms/tsconfig.lib.json",
+            "project": "projects/ng-camunda/forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng-camunda/forms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-camunda/forms/src/test.ts",
+            "tsConfig": "projects/ng-camunda/forms/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-camunda/forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-camunda/forms/tsconfig.lib.json",
+              "projects/ng-camunda/forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@ng-camunda/core"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "@ng-camunda/core",
+  "version": "7.14.0",
+  "scripts": {
+    "openapi-gen": "ng-openapi-gen -c camunda-openapi.json"
+  },
+  "peerDependencies": {
+    "@angular/common": "^11.2.7",
+    "@angular/core": "^11.2.7",
+    "typy": "^3.3.0",
+    "rxjs": "~6.6.0"
+
+  },
+  "dependencies": {
+    "typy": "^3.3.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0"
+  }
+}

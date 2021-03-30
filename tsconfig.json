@@ -1,0 +1,37 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "paths": {
+      "@ng-camunda/core": [
+        "dist/ng-camunda/core/ng-camunda-core",
+        "dist/ng-camunda/core"
+      ],
+      "@ng-camunda/forms": [
+        "dist/ng-camunda/forms/ng-camunda-forms",
+        "dist/ng-camunda/forms"
+      ],
+      "@ng-camunda/tasks": [
+        "dist/ng-camunda/tasks/ng-camunda-tasks",
+        "dist/ng-camunda/tasks"
+      ]
+    },
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false
+  }
+}
