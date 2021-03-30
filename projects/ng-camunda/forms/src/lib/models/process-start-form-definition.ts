@@ -1,5 +1,4 @@
-import { CamundaProcessDefinitionDto } from '@ng-camunda/./camunda-process-definition-dto';
-import { CamundaVariableValueDto } from './camunda-variable-value-dto';
+import { CamundaProcessDefinitionDto,CamundaVariableValueDto } from '@ng-camunda/core';
 
 export interface ProcessStartFormDefinition {
   processDefinition:CamundaProcessDefinitionDto;
