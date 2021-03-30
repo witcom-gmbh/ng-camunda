@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskListService, CamundaTaskDto } from '@ng-camunda-tasks/core';
+import { TaskListService, CamundaTaskDto } from '@ng-camunda/core';
 import { Observable } from 'rxjs';
 import t from 'typy';
 import { AlertService } from '@full-fledged/alerts';

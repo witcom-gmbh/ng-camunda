@@ -27,7 +27,7 @@ import {CoreModule} from '@demo-app/core/core.module'
 import { SharedModule } from '@demo-app/shared/shared.module';
 
 //Features
-//import {ProcessMgmtModule} from '@test-app/features/process-mgmt/process-mgmt.module';
+import {ProcessMgmtModule} from '@demo-app/features/process-mgmt/process-mgmt.module';
 
 
 //Application config
@@ -70,7 +70,7 @@ export const CONFIG_DEPENDENCIES: Provider = {
     CamundaEngine,
     CoreModule,
     SharedModule,
-    //ProcessMgmtModule,
+    ProcessMgmtModule,
     NgbModule,
 
     LoggerModule.forRoot(environment.loggerConfig),

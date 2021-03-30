@@ -6,11 +6,11 @@ import {
   HttpInterceptor,
   HttpResponse
 } from '@angular/common/http';
-import { ErrorHandlerService, ApplicationConfigurationService } from '@test-app/core/services';
+import { ErrorHandlerService, ApplicationConfigurationService } from '@demo-app/core/services';
 import { NextRequestState } from './next-request-state';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { environment } from '@test-app/env/environment';
+import { environment } from '@demo-app/env/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +27,7 @@ export class ApiInterceptor implements HttpInterceptor {
 
 
 
-    if (!request.url.includes(this.appConfig.camundaTasksConfig.rootUrl)) {
+    if (!request.url.includes(this.appConfig.camundaEngineConfig.rootUrl)) {
       // This is not a request to the API! proceed as is
 
       return next.handle(request);

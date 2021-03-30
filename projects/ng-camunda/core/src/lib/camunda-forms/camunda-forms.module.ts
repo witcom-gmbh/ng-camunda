@@ -12,7 +12,7 @@ import { ProcessStartFormComponent } from './components/forms/process-start-form
 import { TaskFormComponent } from './components/forms/task-form.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ProcessStartFormComponent,TaskFormComponent, CustomComponentComponent],
   providers: [
     FormioApiService
   ],
